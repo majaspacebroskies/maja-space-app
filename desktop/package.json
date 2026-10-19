@@ -1,0 +1,69 @@
+{
+ "name": "maja-space",
+ "productName": "Maja Space",
+ "version": "10.3.0",
+ "private": true,
+ "license": "UNLICENSED",
+ "description": "Maja Space: study planner for Tamil Nadu State Board Class 12",
+ "author": "Maja Space",
+ "main": "app/main.js",
+ "build": {
+  "appId": "com.majaspace.app",
+  "productName": "Maja Space",
+  "copyright": "Maja Space",
+  "directories": {
+   "output": "dist",
+   "buildResources": "build"
+  },
+  "files": [
+   "app/**/*",
+   "package.json"
+  ],
+  "asar": true,
+  "afterPack": "build/afterPack.js",
+  "win": {
+   "target": [
+    {
+     "target": "nsis",
+     "arch": [
+      "x64"
+     ]
+    }
+   ],
+   "icon": "build/icon.png",
+   "artifactName": "MajaSpace-Setup.${ext}"
+  },
+  "nsis": {
+   "oneClick": true,
+   "perMachine": false,
+   "allowElevation": false,
+   "createDesktopShortcut": true,
+   "createStartMenuShortcut": true,
+   "shortcutName": "Maja Space",
+   "deleteAppDataOnUninstall": false,
+   "artifactName": "MajaSpace-Setup.${ext}"
+  },
+  "mac": {
+   "target": [
+    {
+     "target": "dmg",
+     "arch": [
+      "arm64",
+      "x64"
+     ]
+    }
+   ],
+   "icon": "build/icon.png",
+   "category": "public.app-category.education",
+   "identity": null,
+   "hardenedRuntime": false,
+   "gatekeeperAssess": false,
+   "artifactName": "MajaSpace-mac-${arch}.${ext}"
+  },
+  "dmg": {
+   "artifactName": "MajaSpace-mac-${arch}.${ext}",
+   "title": "Maja Space"
+  },
+  "publish": null
+ }
+}

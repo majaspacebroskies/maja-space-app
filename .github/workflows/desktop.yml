@@ -1,0 +1,99 @@
+# Builds Maja Space for Windows and Mac from the finished files in this repository (desktop/ and the
+# newest content in updates/), installs and tests them on GitHub's Windows and Mac computers, and, when
+# every test passes, publishes them as a release ("latest") next to the Android app:
+#   https://github.com/<this repo>/releases/latest/download/MajaSpace-Setup.exe      (Windows 10/11)
+#   https://github.com/<this repo>/releases/latest/download/MajaSpace-mac-arm64.dmg  (Apple Silicon)
+#   https://github.com/<this repo>/releases/latest/download/MajaSpace-mac-x64.dmg    (Intel Mac)
+# Test results and screenshots go to the ci-results branch. Free on public repositories.
+name: Windows and Mac apps
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['desktop/**', '.github/workflows/desktop.yml']
+permissions:
+  contents: write
+concurrency:
+  group: desktop
+  cancel-in-progress: false
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: windows-latest, target: win }
+          - { os: macos-latest, target: mac }
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Content into the app
+        run: node desktop/ci/prepare.mjs
+      - name: Electron and electron-builder
+        working-directory: desktop
+        run: npm install --no-audit --no-fund --save-dev --save-exact electron@latest electron-builder@latest
+      - name: Build (${{ matrix.target }})
+        working-directory: desktop
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+        run: npx electron-builder --${{ matrix.target }} --publish never
+      - name: Install and test
+        run: node desktop/ci/test-installed.mjs ${{ matrix.target }}
+      - name: Versions used
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p desktop/results
+          node -e "const p=require('./desktop/package.json');console.log(JSON.stringify({electron:p.devDependencies&&p.devDependencies.electron,builder:p.devDependencies&&p.devDependencies['electron-builder']}))" > desktop/results/tools-${{ matrix.target }}.json || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: results-${{ matrix.target }}
+          path: desktop/results/
+          if-no-files-found: ignore
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ matrix.target }}
+          path: |
+            desktop/dist/MajaSpace-Setup.exe
+            desktop/dist/MajaSpace-mac-*.dmg
+          if-no-files-found: error
+  publish:
+    needs: build
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: art
+      - name: Test results to the ci-results branch
+        if: always()
+        run: |
+          mkdir -p /tmp/ci && cp -r art/results-* /tmp/ci/ 2>/dev/null || true
+          printf '{"run":"%s","sha":"%s","build":"%s"}\n' "${{ github.run_id }}" "${{ github.sha }}" "${{ needs.build.result }}" > /tmp/ci/run.json
+          cd /tmp/ci && git init -q && git checkout -q -b ci-results
+          git config user.name "github-actions[bot]" && git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -q -m "Test results of run ${{ github.run_id }}"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" ci-results
+      - name: Release
+        if: needs.build.result == 'success'
+        run: |
+          V=$(node -p "require('./desktop/package.json').version")
+          mkdir rel
+          cp art/dist-win/MajaSpace-Setup.exe rel/
+          cp art/dist-mac/MajaSpace-mac-arm64.dmg art/dist-mac/MajaSpace-mac-x64.dmg rel/
+          cp updates/MajaSpace-latest.apk rel/MajaSpace-Android.apk
+          (cd rel && sha256sum * > SHA256SUMS.txt)
+          if gh release view "desktop-v$V" >/dev/null 2>&1; then
+            gh release upload "desktop-v$V" rel/* --clobber
+          else
+            gh release create "desktop-v$V" rel/* --title "Maja Space $V" --notes-file desktop/release-notes.md --latest
+          fi

@@ -1,0 +1,10 @@
+{
+ "appCode": 1003,
+ "urls": [
+  "https://raw.githubusercontent.com/majaspacebroskies/maja-space-app/main/updates/update.json",
+  "https://cdn.jsdelivr.net/gh/majaspacebroskies/maja-space-app@main/updates/update.json"
+ ],
+ "home": "https://github.com/majaspacebroskies/maja-space-app",
+ "downloadPage": "https://safistudyspace.netlify.app/",
+ "cert": "-----BEGIN CERTIFICATE-----\nMIIEFDCCAnygAwIBAgIJAKdYkPjfCGzQMA0GCSqGSIb3DQEBDAUAMDcxCzAJBgNV\nBAYTAklOMRMwEQYDVQQKEwpNYWphIFNwYWNlMRMwEQYDVQQDEwpNYWphIFNwYWNl\nMCAXDTI2MTAxOTA1MzUyM1oYDzIwNTkwODI3MDUzNTIzWjA3MQswCQYDVQQGEwJJ\nTjETMBEGA1UEChMKTWFqYSBTcGFjZTETMBEGA1UEAxMKTWFqYSBTcGFjZTCCAaIw\nDQYJKoZIhvcNAQEBBQADggGPADCCAYoCggGBAL8I+llbYQbX7327sNuaYcpsf5+T\nPgISKPbOaj28kS5ytbcf32Xk5tyboSQNfZZVO2hbL7S+CW6q3g8pNlzlNbdnklLT\nSddAE0aznzd84zilwKI7bKG9x3XveS6SnGycJ40s7/BXbOi4TmJsNcaTqgeUSXUG\n0k8YRQCIWpDHOeo8aOQwTH1H2btz+694ExCzx7oFvaowoov/FRbl+VgvpT9t5lHz\nm9i4N0BadSuW3QoG0BmxjTEQqqU2nNWjD6J2bfTo6VuQTkUjjrZLZoKgkgu0RA+7\nY6vgKsY5D3FkDjbzeGVO/CZ8eTorNE3oOhDRlBXr2fJcmTNKO5Q+mpmqIsTQaPcc\niD+Vr06LHQzIZ9e137LpOoo/mcOluhNOimGTB/99UvQfCyIYcQo5mDeF5HfHjEM2\nqvz5f+CR/QFLfSiyq2jI7/mskLuU66QIHDcTyD2fuNmz2pYrKNYXcDsHaxGdkP6a\nterkhopPNTfMC8bI/vPlcazyDqOZfVLg2f1OIQIDAQABoyEwHzAdBgNVHQ4EFgQU\n6OSDfVJ9xHgyi4kXWGXX+Ab/SiswDQYJKoZIhvcNAQEMBQADggGBAJFdxN7MXyWb\ny9SIfNLWUOI8oP7k3VSZas4VQPzK0DOzucCQNS42KhLvejEJEfZtzlPkKF/0Zhl0\nqi/MAt7uI9IGB66jPQRYpOl89AB5QQMzBct6kn7HFvQFWm+T5Txr4pCX2YfWl44/\nCDM2w++4z3JjB/048SpdrKohwmUvOm/pdYvM8ZM0x/UZWgDiG+hLddeVq4+oQn05\ntTllpkfLbfjPkjlzGWyCvsen8zRG5pGZuSpR5sMSmBaWbroPhR11j1Vk/b+BgIwl\nwVlS/oLe+CFn55qjNQAta7lUvCBxx9h3o+L1QKtkrBAvG19Wfn6af+Fw8tMdbvxT\nUAy7C2mu24lDKfYtZpOcIjtJPf90KCmwunVBRnkmN7V82Sz0XYNsXgebaaxcH0+n\nkpjDytWkpRr6vbIRkqjnaaEwQ5DsOGwgJEh7TwLUqQVyEW7tZCVqn4PTWO92ml6S\nCBXi3e+pXFyIww1wyMdn85v+hshiaOAmfKrax6mr//O4Jt0vlaVCag==\n-----END CERTIFICATE-----\n"
+}
