@@ -1,0 +1,46 @@
+{
+ "target": "mac-x64",
+ "version": "10.3.0",
+ "pass": true,
+ "steps": [
+  {
+   "step": "disk image built",
+   "pass": true,
+   "size": 140000774
+  },
+  {
+   "step": "image has the app and the Applications shortcut",
+   "pass": true
+  },
+  {
+   "step": "signature (ad hoc) is valid",
+   "pass": true,
+   "info": "valid"
+  },
+  {
+   "step": "oldest macOS it runs on: 13.0",
+   "pass": true,
+   "info": "13.0"
+  },
+  {
+   "step": "the program is for x64",
+   "pass": true,
+   "info": "/tmp/maja-apps-Z0TxSr/Maja Space.app/Contents/MacOS/Maja Space: Mach-O 64-bit executable x86_64"
+  },
+  {
+   "step": "self-test",
+   "pass": true,
+   "exit": 0,
+   "signal": null,
+   "seconds": 128,
+   "passed": "32/32",
+   "error": "",
+   "stderr": "2026-10-19 13:45:39.915 Maja Space Helper[4081:15948] XPC error for connection com.apple.backupd.sandbox.xpc: Connection invalid\n2026-10-19 13:45:39.916 Maja Space Helper[4081:15947] XPC error for connection com.apple.backupd.sandbox.xpc: Connection invalid\n2026-10-19 13:45:39.934 Maja Space Helper[4081:15947] XPC error for connection com.apple.backupd.sandbox.xpc: Connection invalid\n2026-10-19 13:46:27.918 Maja Space Helper[4081:15942] XPC error for connection com.apple.backupd.sandbox.xpc: Connection invalid\n2026-10-19 13:46:27.923 Maja Space Helper[4081:15942] XPC error for connection com.apple.backupd.sandbox.xpc: Connection invalid\n2026-10-19 13:46:27.926 Maja Space Helper[4081:15942] XPC error for connection com.apple.backupd.sandbox.xpc: Connection invalid\n"
+  }
+ ],
+ "runner": {
+  "os": "24.6.0",
+  "arch": "arm64",
+  "platform": "darwin"
+ }
+}

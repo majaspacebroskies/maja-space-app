@@ -1,0 +1,46 @@
+{
+ "target": "win",
+ "version": "10.3.0",
+ "pass": true,
+ "steps": [
+  {
+   "step": "installer built",
+   "pass": true,
+   "size": 113560195
+  },
+  {
+   "step": "silent install",
+   "pass": true,
+   "exit": 0
+  },
+  {
+   "step": "installed for this user (no admin)",
+   "pass": true,
+   "path": "C:\\Users\\runneradmin\\AppData\\Local\\Programs\\maja-space\\Maja Space.exe"
+  },
+  {
+   "step": "Start menu shortcut",
+   "pass": true,
+   "path": "C:\\Users\\runneradmin\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Maja Space.lnk"
+  },
+  {
+   "step": "self-test",
+   "pass": true,
+   "exit": 0,
+   "signal": null,
+   "seconds": 25,
+   "passed": "32/32",
+   "error": "",
+   "stderr": ""
+  },
+  {
+   "step": "uninstaller present",
+   "pass": true
+  }
+ ],
+ "runner": {
+  "os": "10.0.26100",
+  "arch": "x64",
+  "platform": "win32"
+ }
+}

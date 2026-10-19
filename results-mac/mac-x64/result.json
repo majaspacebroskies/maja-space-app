@@ -1,0 +1,191 @@
+{
+ "ok": true,
+ "passed": 32,
+ "total": 32,
+ "seconds": 66,
+ "results": [
+  {
+   "name": "the app starts and the page reports a good start",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "the bridge is there and says mac",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "version shown to the page",
+   "pass": true,
+   "info": "10.3.0"
+  },
+  {
+   "name": "the study assistant is hidden (no server)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "signs in",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "page today shows (no error, no sideways scroll)",
+   "pass": true,
+   "info": "{\"cur\":\"today\",\"len\":1416,\"wrong\":false,\"over\":-15}"
+  },
+  {
+   "name": "page pomodoro shows (no error, no sideways scroll)",
+   "pass": true,
+   "info": "{\"cur\":\"pomodoro\",\"len\":2264,\"wrong\":false,\"over\":-15}"
+  },
+  {
+   "name": "page calendar shows (no error, no sideways scroll)",
+   "pass": true,
+   "info": "{\"cur\":\"calendar\",\"len\":1915,\"wrong\":false,\"over\":-15}"
+  },
+  {
+   "name": "page syllabus shows (no error, no sideways scroll)",
+   "pass": true,
+   "info": "{\"cur\":\"syllabus\",\"len\":1436,\"wrong\":false,\"over\":-15}"
+  },
+  {
+   "name": "page papers shows (no error, no sideways scroll)",
+   "pass": true,
+   "info": "{\"cur\":\"papers\",\"len\":878,\"wrong\":false,\"over\":-15}"
+  },
+  {
+   "name": "page settings shows (no error, no sideways scroll)",
+   "pass": true,
+   "info": "{\"cur\":\"settings\",\"len\":400,\"wrong\":false,\"over\":-15}"
+  },
+  {
+   "name": "page more shows (no error, no sideways scroll)",
+   "pass": true,
+   "info": "{\"cur\":\"more\",\"len\":690,\"wrong\":false,\"over\":-15}"
+  },
+  {
+   "name": "the app lock card says it is Android only",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "Settings shows App updates for this computer",
+   "pass": true,
+   "info": "Self test\n\nSigned in as maja05 (member 5 of 30)\n\nSign out\nSaved on this device\nSync error · Saved locally\n↻ Sync now\n\nFailed to fetch\n\nThis app\nApp updates\n\nMaja Space 10.3.0 for Mac · content 10.3.0\n"
+  },
+  {
+   "name": "a focus session sends its plan (phases and alerts)",
+   "pass": true,
+   "info": "3 phases, 3 alerts"
+  },
+  {
+   "name": "the screen is kept on during the session (if the setting is on)",
+   "pass": true,
+   "info": "wake=true blocker=true"
+  },
+  {
+   "name": "stopping sends an empty plan and lets the screen sleep",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "saving a file works",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "links open in the browser, not in the app",
+   "pass": true,
+   "info": "https://example.com/maja-selftest"
+  },
+  {
+   "name": "the page stays the app after a link",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "update check: the published update.json is signed with Maja Space’s key",
+   "pass": true,
+   "info": "done  latest web 10.3.0"
+  },
+  {
+   "name": "content update: download, SHA-256 and unpacking work",
+   "pass": true,
+   "info": "30 files from web-10030.zip"
+  },
+  {
+   "name": "page today fits at 1024×700",
+   "pass": true,
+   "info": "overflow -15px"
+  },
+  {
+   "name": "page pomodoro fits at 1024×700",
+   "pass": true,
+   "info": "overflow -15px"
+  },
+  {
+   "name": "page calendar fits at 1024×700",
+   "pass": true,
+   "info": "overflow -15px"
+  },
+  {
+   "name": "page today fits at 800×640",
+   "pass": true,
+   "info": "overflow -15px"
+  },
+  {
+   "name": "page pomodoro fits at 800×640",
+   "pass": true,
+   "info": "overflow -15px"
+  },
+  {
+   "name": "page calendar fits at 800×640",
+   "pass": true,
+   "info": "overflow -15px"
+  },
+  {
+   "name": "page today fits at 420×760",
+   "pass": true,
+   "info": "overflow -15px"
+  },
+  {
+   "name": "page pomodoro fits at 420×760",
+   "pass": true,
+   "info": "overflow -15px"
+  },
+  {
+   "name": "page calendar fits at 420×760",
+   "pass": true,
+   "info": "overflow -15px"
+  },
+  {
+   "name": "no errors in the page",
+   "pass": true,
+   "info": ""
+  }
+ ],
+ "consoleErrors": [],
+ "screenshots": [
+  "01-sign-in.png",
+  "02-today.png",
+  "02-pomodoro.png",
+  "02-calendar.png",
+  "02-settings.png",
+  "03-settings-updates.png",
+  "04-focus-running.png",
+  "05-today-1024.png",
+  "05-today-800.png",
+  "05-today-420.png"
+ ],
+ "info": {
+  "app": "10.3.0",
+  "electron": "44.9.0",
+  "chrome": "152.0.7977.167",
+  "node": "24.22.0",
+  "platform": "darwin",
+  "arch": "x64",
+  "os": "24.6.0",
+  "web": "10.3.0"
+ }
+}
