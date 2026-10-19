@@ -78,6 +78,9 @@ if (target === 'win') {
       let sig = '';
       try { execFileSync('codesign', ['--verify', '--deep', '--strict', app], { stdio: 'pipe' }); sig = 'valid'; } catch (e) { sig = String(e.stderr || e.message).slice(0, 400); }
       steps.push({ step: 'signature (ad hoc) is valid', pass: sig === 'valid', info: sig });
+      let minOS = '';
+      try { minOS = execFileSync('plutil', ['-extract', 'LSMinimumSystemVersion', 'raw', path.join(app, 'Contents', 'Info.plist')], { encoding: 'utf8' }).trim(); } catch (e) { minOS = ''; }
+      steps.push({ step: 'oldest macOS it runs on: ' + (minOS || '?'), pass: true, info: minOS });
       const exe = path.join(app, 'Contents', 'MacOS', 'Maja Space');
       const kind = spawnSync('file', [exe], { encoding: 'utf8' }).stdout || '';
       steps.push({ step: 'the program is for ' + arch, pass: arch === 'arm64' ? /arm64/.test(kind) : /x86_64/.test(kind), info: kind.trim() });

@@ -23,7 +23,7 @@ jobs:
       matrix:
         include:
           - { os: windows-latest, target: win }
-          - { os: macos-latest, target: mac }
+          - { os: macos-15, target: mac }   # arm64; builds both Mac versions (macos-latest = macos-26 had long queues)
     runs-on: ${{ matrix.os }}
     timeout-minutes: 45
     steps:
