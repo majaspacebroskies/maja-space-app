@@ -1,16 +1,16 @@
 {
  "name": "maja-space",
  "productName": "Maja Space",
- "version": "10.3.0",
+ "version": "10.6.0",
  "private": true,
  "license": "UNLICENSED",
- "description": "Maja Space: study planner for Tamil Nadu State Board Class 12",
- "author": "Maja Space",
+ "description": "Maja Space: study planner for Tamil Nadu State Board Class 12, made by Mohamed Safi",
+ "author": "Mohamed Safi",
  "main": "app/main.js",
  "build": {
   "appId": "com.majaspace.app",
   "productName": "Maja Space",
-  "copyright": "Maja Space",
+  "copyright": "\u00a9 2026 Mohamed Safi (Maja Space)",
   "directories": {
    "output": "dist",
    "buildResources": "build"

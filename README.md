@@ -3,7 +3,9 @@
 Finished app files of **Maja Space**, the study planner for Tamil Nadu State Board Class 12, and nothing
 else: the source code is kept private. Everything here is built and minified from it.
 
-**Download:** https://safistudyspace.netlify.app/, or directly:
+Maja Space is made by **Mohamed Safi**, its founder and owner.
+
+**Download:** https://majaspace.info/, or directly:
 
 | Device | File |
 |---|---|
@@ -16,4 +18,4 @@ else: the source code is kept private. Everything here is built and minified fro
 - `desktop/`: the files GitHub builds the Windows and Mac apps from; `.github/workflows/desktop.yml` builds,
   installs and tests them on Windows and Mac, then publishes them under Releases.
 
-© Maja Space. All rights reserved.
+© 2026 Mohamed Safi (Maja Space). All rights reserved.
