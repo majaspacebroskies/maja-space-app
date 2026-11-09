@@ -1,0 +1,46 @@
+{
+ "target": "win",
+ "version": "10.6.0",
+ "pass": true,
+ "steps": [
+  {
+   "step": "installer built",
+   "pass": true,
+   "size": 124835325
+  },
+  {
+   "step": "silent install",
+   "pass": true,
+   "exit": 0
+  },
+  {
+   "step": "installed for this user (no admin)",
+   "pass": true,
+   "path": "C:\\Users\\runneradmin\\AppData\\Local\\Programs\\maja-space\\Maja Space.exe"
+  },
+  {
+   "step": "Start menu shortcut",
+   "pass": true,
+   "path": "C:\\Users\\runneradmin\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Maja Space.lnk"
+  },
+  {
+   "step": "self-test",
+   "pass": true,
+   "exit": 0,
+   "signal": null,
+   "seconds": 27,
+   "passed": "32/32",
+   "error": "",
+   "stderr": "(electron) 'console-message' arguments are deprecated and will be removed. Please use Event<WebContentsConsoleMessageEventParams> object instead.\n"
+  },
+  {
+   "step": "uninstaller present",
+   "pass": true
+  }
+ ],
+ "runner": {
+  "os": "10.0.26100",
+  "arch": "x64",
+  "platform": "win32"
+ }
+}
